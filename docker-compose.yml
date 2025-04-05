@@ -1,0 +1,9 @@
+services:
+    custom-rpi-image:
+        build: .
+        privileged: true
+        stdin_open: true
+        tty: true
+        image: macmind_rpi_auto_resize_root:latest
+        volumes:
+            - ./custom-rpi-image:/home/imagegen/custom-rpi-image
