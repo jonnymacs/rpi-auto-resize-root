@@ -3,17 +3,14 @@
 Complete tutorial on how to configure the Raspberry Pi image to automatically resize the
 root partition to use the full unallocated space on your sd card or usb drive.
 
+This has been tested on both ARM64 Mac and AMD64 Mac laptops.
+
+AMD is much slower as expected due to emulation.
+
 ```sh
 git clone https://github.com/jonnymacs/rpi-auto-resize-root
 cd rpi-auto-resize-root
 ./build.sh
-```
-
-## if you are on intel chip you need to execute the commands in the build script 1 at a time and make this change in the rpi image gen container
-```bash
-$sudo su
-$mount binfmt_misc -t binfmt_misc /proc/sys/fs/binfmt_misc && echo 1 > /proc/sys/fs/binfmt_misc/status
-$exit
 ```
 
 Use the Raspberry Pi Imager tool to install the img file located in custom-rpi-image/deploy
